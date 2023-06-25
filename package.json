@@ -1,0 +1,20 @@
+{
+  "name": "social-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Element2804/Social-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Element2804/Social-API/issues"
+  },
+  "homepage": "https://github.com/Element2804/Social-API#readme"
+}
