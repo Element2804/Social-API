@@ -11,10 +11,15 @@
     "url": "git+https://github.com/Element2804/Social-API.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "William Faries",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Element2804/Social-API/issues"
   },
-  "homepage": "https://github.com/Element2804/Social-API#readme"
+  "homepage": "https://github.com/Element2804/Social-API#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.4"
+  }
 }
