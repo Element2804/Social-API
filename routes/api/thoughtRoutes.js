@@ -5,6 +5,7 @@ const {
     createThought,
     getOneThought,
     updateThought,
+    deleteThought,
     createReaction,
     deleteReaction
 
@@ -17,6 +18,7 @@ router.route('/').get(getAllThought).post(createThought);
 router.route('/:thoughtId')
 .get(getOneThought)
 .put(updateThought)
+.delete(deleteThought)
 
 
 // end point for creating reactions
