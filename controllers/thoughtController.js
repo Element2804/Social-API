@@ -91,25 +91,22 @@ createReaction(req, res) {
       .catch((err) => res.status(500).json(err));
   },
   
-  async deleteReaction(req, res) {
-    try {
-      const thoughtData = await Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
-      { $pull: { reactions: { reactionId: req.params.reactionId } } },
-      { runValidators: true, new: true }
-    );
-
-        if (!thoughtData) {
-          return res.status(404).json({ message: 'Thought with that ID does not exist.' });
-        }
-        res.json(thoughtData)
-        console.log(thoughtData);
-      }
-      catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-      };
-  },
+  deleteReaction(req, res) {
+    Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $pull: { reactions: { reactionID: req.params.reactionId } } },
+        { new: true, runValidators: true }
+    )
+        .select('-__v')
+        .then(thoughtData => {
+            if (!thoughtData) {
+                res.status(404).json({ message: 'No reaction found with that ID.' });
+                return;
+            }
+            res.json({ message: 'Your reaction was removed from the thought.', thoughtData });
+        })
+        .catch(err => res.status(400).json(err));
+},
 
   
 
