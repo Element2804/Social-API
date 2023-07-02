@@ -70,3 +70,5 @@ thoughtSchema.virtual('reactionCount')
 // creates model named "thought" with the thoughtSchema parameters
 const Thought = model('Thought', thoughtSchema);
 
+module.exports = Thought;
+
