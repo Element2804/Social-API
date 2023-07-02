@@ -78,12 +78,12 @@ createReaction(req, res) {
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
-      .then((dbThoughtData) => {
-        if (!dbThoughtData) {
+      .then((thought) => {
+        if (!thought) {
           return res.status(404).json({ message: 'Thought with that ID does not exist.' });
         }
-        res.json(dbThoughtData)
-        console.log(dbThoughtData);
+        res.json(thought)
+        console.log(thought);
       })
       .catch((err) => {
         console.log(err);
